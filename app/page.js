@@ -1,95 +1,93 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import {FaUserLock,} from "react-icons/fa6"
+import {BsMortarboardFill} from "react-icons/bs"
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+
+
+
+export default function Homepage(){
+
+  return(
+    <div>
+      {/* NAVBAR */}
+      <div className="nav navbar bg-light sticky top-0" style={{
+        height:"10vh"
+      }}>
+        <div className="container">
+          <div className="navbrand">
+            <Image src={"/nsuk-logo.jpg"} height={50} width={50} className="rounded"/>
+          </div>
+          <div className="ml-auto">
+            <button className="btn btn-success">
+              Login
+            </button>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      {/* HERO SECTION */}
+      <div className="position-relative d-flex justify-content-center align-items-center flex-column" style={{
+        height:"50vh",
+      }}>
+        <div className="position-absolute" style={{
+          height:"50vh",
+          width:"100%",
+          zIndex:-10,
+          opacity:"50%"
+        }}>
+          <Image src={"/students.jpg"} height={300} width={300} style={{
+            height:"100%",
+            width:"100%"
+          }}/>
+        </div>
+        <h1 className="text-success fw-bold">
+          Students Status Tracker
+        </h1>
+        <button className="btn my-3 btn-success rounded-0 btn-lg">
+          Go To App
+        </button>
       </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div className="bg-secondary">
+        <div className="container p-5 d-flex justify-content-evenly">
+          <div className="card container shadow-lg" style={{
+            height:"250px",
+            width:"250px"
+          }}>
+            <span className="fw-bold text-center p-2">
+              <FaUserLock style={{fontSize:20}}/>
+              Admin
+              </span>
+            <div className="bg-secondary w-100" style={{height:"5px"}}/>
+            <p className="lead my-5 text-center">
+              Manage Administrative access to students
+            </p>
+            <button className="btn btn-success btn-sm">
+              Login
+            </button>
+          </div>
+          <div className="card container shadow-lg" style={{
+            height:"250px",
+            width:"250px"
+          }}>
+                <span className="fw-bold text-center p-2">
+              <BsMortarboardFill style={{fontSize:20}}/>
+              Student
+              </span>
+            <div className="bg-secondary w-100" style={{height:"5px"}}/>
+            <p className="lead my-5 text-center">
+              Login and Track Success
+            </p>
+            <button className="btn btn-success btn-sm">
+              Login
+            </button>
+          </div>
+        </div>
       </div>
-    </main>
-  );
+      <div className="bg-secondary border border-top-1 border-light justify-content-center d-flex align-items-center" style={{
+        height:"10vh",
+      }}>
+          <p className="text-white lead  text-center">Copyright - {new Date().getFullYear()}</p>
+      </div>
+    </div>
+  )
 }

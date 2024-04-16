@@ -1,0 +1,1 @@
+export const TOKEN_NAME = "status-tracker-app-token"
